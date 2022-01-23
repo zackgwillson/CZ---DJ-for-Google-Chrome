@@ -1,0 +1,607 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Basic' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Be Vietnam' rel='stylesheet'>
+    <title>CZ - DJ for Google Meet</title>
+    <style>
+        .DJ {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 15px;
+        }
+        .drumPad {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .drumPad1 {
+            height:93px;
+            width:93px;
+            background: rgba(255, 0, 0, 0.973);
+            color: white;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .drumPad2 {
+            height:93px;
+            width:93px;
+            background: rgba(255, 0, 0, 0.247);
+            color: white;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .PlayPause {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        body {
+            background-color: rgb(90, 90, 90);
+        }
+        h1 {
+            color: red;
+            font-weight: bold;
+            background-color:rgb(59, 59, 59);
+            border-radius: 10px;
+            font-family: 'Audiowide';
+        }
+        h2 {
+            color: rgba(0, 0, 0, 0.377);
+            font-style: italic;
+        }
+        h3 {
+            font-family: verdana;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            font-family: 'Basic';
+        }
+        .Play {
+            background: rgb(255, 0, 0);
+            color: black;
+            font-family: 'Be Vietnam';
+            border-radius: 10px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .Play:hover {
+            background: rgba(255, 0, 0, 0.144);
+        }
+        .Pause {
+            background: rgb(255, 92, 92);
+            color: black;
+            font-family: 'Be Vietnam';
+            border-radius: 10px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .Pause:hover {
+            background: rgba(255, 21, 21, 0.664);
+        }
+        .Restart {
+            background: rgb(143, 0, 0);
+            color: white;
+            font-family: 'Be Vietnam';
+            border-radius: 10px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .Restart:hover {
+            background: rgba(37, 9, 9, 0.521);
+        }
+        .PlayEffect {
+            background: rgba(255, 0, 0, 0.767);
+            color: white;
+            font-family: 'Be Vietnam';
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .PlayEffect:hover {
+            background: rgba(255, 100, 100, 0.767);
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        CZ - Chrome DJ
+    </h1>
+    <h2>
+        Drum Pad
+    </h2>
+    <div class="drumPad">
+        <div>
+            <button id="1" class="drumPad1">OPEN HI-HAT</button>
+            <button id="4" class="drumPad2">SNARE</button>
+            <button id="7" class="drumPad1">CRASH</button>
+        </div>
+        <div>
+            <button id="2" class="drumPad2">CLOSED HI-HAT</button>
+            <button id="5" class="drumPad2">KICK</button>
+            <button id="8" class="drumPad2">SIDE STICK</button>
+        </div>
+        <div>
+            <button id="3" class="drumPad1">COWBELL</button>
+            <button id="6" class="drumPad2">CLAP</button>
+            <button id="9" class="drumPad1">RIDE</button>
+        </div>
+    </div>
+    <div class="DJ">
+        <div class="container">
+            <h2>
+                808s
+            </h2>
+            <h3>
+                Drum Pattern 1
+            </h3>
+            <div class="PlayPause">
+                <button id="D1" class="Play">Play</button>
+                <button id="pauseD1" class="Pause">Pause</button>
+            </div>
+            <button id="restartD1" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 2
+            </h3>
+            <div class="PlayPause">
+                <button id="D2" class="Play">Play</button>
+                <button id="pauseD2" class="Pause">Pause</button>
+            </div>
+            <button id="restartD2" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 3
+            </h3>
+            <div class="PlayPause">
+                <button id="D3" class="Play">Play</button>
+                <button id="pauseD3" class="Pause">Pause</button>
+            </div>
+            <button id="restartD3" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 4
+            </h3>
+            <div class="PlayPause">
+                <button id="D4" class="Play">Play</button>
+                <button id="pauseD4" class="Pause">Pause</button>
+            </div>
+            <button id="restartD4" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 5
+            </h3>
+            <div class="PlayPause">
+                <button id="D5" class="Play">Play</button>
+                <button id="pauseD5" class="Pause">Pause</button>
+            </div>
+            <button id="restartD5" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 6
+            </h3>
+            <div class="PlayPause">
+                <button id="D6" class="Play">Play</button>
+                <button id="pauseD6" class="Pause">Pause</button>
+            </div>
+            <button id="restartD6" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 7
+            </h3>
+            <div class="PlayPause">
+                <button id="D7" class="Play">Play</button>
+                <button id="pauseD7" class="Pause">Pause</button>
+            </div>
+            <button id="restartD7" class="Restart">Restart</button>
+        </div>
+        <div>
+            <h2>
+                "Samples"
+            </h2>
+            <h3>
+                Piano 1
+            </h3>
+            <div class="PlayPause">
+                <button id="P1" class="Play">Play</button>
+                <button id="pauseP1" class="Pause">Pause</button>
+            </div>
+            <button id="restartP1" class="Restart">Restart</button>
+            <h3>
+                Piano 2
+            </h3>
+            <div class="PlayPause">
+                <button id="M1" class="Play">Play</button>
+                <button id="pauseM1" class="Pause">Pause</button>
+            </div>
+            <button id="restartM1" class="Restart">Restart</button>
+            <h3>
+                Piano 3
+            </h3>
+            <div class="PlayPause">
+                <button id="M2" class="Play">Play</button>
+                <button id="pauseM2" class="Pause">Pause</button>
+            </div>
+            <button id="restartM2" class="Restart">Restart</button>
+            <h3>
+                Melody 1
+            </h3>
+            <div class="PlayPause">
+                <button id="M3" class="Play">Play</button>
+                <button id="pauseM3" class="Pause">Pause</button>
+            </div>
+            <button id="restartM3" class="Restart">Restart</button>
+            <h3>
+                Melody 2
+            </h3>
+            <div class="PlayPause">
+                <button id="M4" class="Play">Play</button>
+                <button id="pauseM4" class="Pause">Pause</button>
+            </div>
+            <button id="restartM4" class="Restart">Restart</button>
+            <h3>
+                Melody 3
+            </h3>
+            <div class="PlayPause">
+                <button id="M5" class="Play">Play</button>
+                <button id="pauseM5" class="Pause">Pause</button>
+            </div>
+            <button id="restartM5" class="Restart">Restart</button>
+            <h3>
+                Melody 4
+            </h3>
+            <div class="PlayPause">
+                <button id="M6" class="Play">Play</button>
+                <button id="pauseM6" class="Pause">Pause</button>
+            </div>
+            <button id="restartM6" class="Restart">Restart</button>
+            <h3>
+                Melody 5
+            </h3>
+            <div class="PlayPause">
+                <button id="M7" class="Play">Play</button>
+                <button id="pauseM7" class="Pause">Pause</button>
+            </div>
+            <button id="restartM7" class="Restart">Restart</button>
+            <h3>
+                Melody 6
+            </h3>
+            <div class="PlayPause">
+                <button id="M8" class="Play">Play</button>
+                <button id="pauseM8" class="Pause">Pause</button>
+            </div>
+            <button id="restartM8" class="Restart">Restart</button>
+            <h3>
+                Melody 7
+            </h3>
+            <div class="PlayPause">
+                <button id="M9" class="Play">Play</button>
+                <button id="pauseM9" class="Pause">Pause</button>
+            </div>
+            <button id="restartM9" class="Restart">Restart</button>
+        </div>
+        <div>
+            <h2>
+                Sound Effects
+            </h2>
+            <button id="Clap" class="PlayEffect">Clap</button>
+            <button id="CZ" class="PlayEffect">CZ</button>
+            <button id="Bark" class="PlayEffect">Bark</button>
+            <button id="Wu" class="PlayEffect">Wu!</button>
+            <button id="Scratch1" class="PlayEffect">Scratch 1</button>
+            <button id="Scratch2" class="PlayEffect">Scratch 2</button>
+            <button id="Scratch3" class="PlayEffect">Scratch 3</button>
+            <button id="Scratch4" class="PlayEffect">Scratch 4</button>
+        </div>
+    </div>
+    <script src="popup.js" charset="utf-8">
+        </script>
+    <script src="content.js" charset="utf-8">
+        </script>
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Basic' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Be Vietnam' rel='stylesheet'>
+    <title>CZ - DJ for Google Meet</title>
+    <style>
+        .DJ {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 15px;
+        }
+        .drumPad {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        .drumPad1 {
+            height:93px;
+            width:93px;
+            background: rgba(255, 0, 0, 0.973);
+            color: white;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .drumPad2 {
+            height:93px;
+            width:93px;
+            background: rgba(255, 0, 0, 0.247);
+            color: white;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .PlayPause {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        body {
+            background-color: rgb(90, 90, 90);
+        }
+        h1 {
+            color: red;
+            font-weight: bold;
+            background-color:rgb(59, 59, 59);
+            border-radius: 10px;
+            font-family: 'Audiowide';
+        }
+        h2 {
+            color: rgba(0, 0, 0, 0.377);
+            font-style: italic;
+        }
+        h3 {
+            font-family: verdana;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+            font-family: 'Basic';
+        }
+        .Play {
+            background: rgb(255, 0, 0);
+            color: black;
+            font-family: 'Be Vietnam';
+            border-radius: 10px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .Play:hover {
+            background: rgba(255, 0, 0, 0.144);
+        }
+        .Pause {
+            background: rgb(255, 92, 92);
+            color: black;
+            font-family: 'Be Vietnam';
+            border-radius: 10px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .Pause:hover {
+            background: rgba(255, 21, 21, 0.664);
+        }
+        .Restart {
+            background: rgb(143, 0, 0);
+            color: white;
+            font-family: 'Be Vietnam';
+            border-radius: 10px;
+            font-size: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .Restart:hover {
+            background: rgba(37, 9, 9, 0.521);
+        }
+        .PlayEffect {
+            background: rgba(255, 0, 0, 0.767);
+            color: white;
+            font-family: 'Be Vietnam';
+            border-radius: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .PlayEffect:hover {
+            background: rgba(255, 100, 100, 0.767);
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        CZ - Chrome DJ
+    </h1>
+    <h2>
+        Drum Pad
+    </h2>
+    <div class="drumPad">
+        <div>
+            <button id="1" class="drumPad1">OPEN HI-HAT</button>
+            <button id="4" class="drumPad2">SNARE</button>
+            <button id="7" class="drumPad1">CRASH</button>
+        </div>
+        <div>
+            <button id="2" class="drumPad2">CLOSED HI-HAT</button>
+            <button id="5" class="drumPad2">KICK</button>
+            <button id="8" class="drumPad2">SIDE STICK</button>
+        </div>
+        <div>
+            <button id="3" class="drumPad1">COWBELL</button>
+            <button id="6" class="drumPad2">CLAP</button>
+            <button id="9" class="drumPad1">RIDE</button>
+        </div>
+    </div>
+    <div class="DJ">
+        <div class="container">
+            <h2>
+                808s
+            </h2>
+            <h3>
+                Drum Pattern 1
+            </h3>
+            <div class="PlayPause">
+                <button id="D1" class="Play">Play</button>
+                <button id="pauseD1" class="Pause">Pause</button>
+            </div>
+            <button id="restartD1" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 2
+            </h3>
+            <div class="PlayPause">
+                <button id="D2" class="Play">Play</button>
+                <button id="pauseD2" class="Pause">Pause</button>
+            </div>
+            <button id="restartD2" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 3
+            </h3>
+            <div class="PlayPause">
+                <button id="D3" class="Play">Play</button>
+                <button id="pauseD3" class="Pause">Pause</button>
+            </div>
+            <button id="restartD3" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 4
+            </h3>
+            <div class="PlayPause">
+                <button id="D4" class="Play">Play</button>
+                <button id="pauseD4" class="Pause">Pause</button>
+            </div>
+            <button id="restartD4" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 5
+            </h3>
+            <div class="PlayPause">
+                <button id="D5" class="Play">Play</button>
+                <button id="pauseD5" class="Pause">Pause</button>
+            </div>
+            <button id="restartD5" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 6
+            </h3>
+            <div class="PlayPause">
+                <button id="D6" class="Play">Play</button>
+                <button id="pauseD6" class="Pause">Pause</button>
+            </div>
+            <button id="restartD6" class="Restart">Restart</button>
+            <h3>
+                Drum Pattern 7
+            </h3>
+            <div class="PlayPause">
+                <button id="D7" class="Play">Play</button>
+                <button id="pauseD7" class="Pause">Pause</button>
+            </div>
+            <button id="restartD7" class="Restart">Restart</button>
+        </div>
+        <div>
+            <h2>
+                "Samples"
+            </h2>
+            <h3>
+                Piano 1
+            </h3>
+            <div class="PlayPause">
+                <button id="P1" class="Play">Play</button>
+                <button id="pauseP1" class="Pause">Pause</button>
+            </div>
+            <button id="restartP1" class="Restart">Restart</button>
+            <h3>
+                Piano 2
+            </h3>
+            <div class="PlayPause">
+                <button id="M1" class="Play">Play</button>
+                <button id="pauseM1" class="Pause">Pause</button>
+            </div>
+            <button id="restartM1" class="Restart">Restart</button>
+            <h3>
+                Piano 3
+            </h3>
+            <div class="PlayPause">
+                <button id="M2" class="Play">Play</button>
+                <button id="pauseM2" class="Pause">Pause</button>
+            </div>
+            <button id="restartM2" class="Restart">Restart</button>
+            <h3>
+                Melody 1
+            </h3>
+            <div class="PlayPause">
+                <button id="M3" class="Play">Play</button>
+                <button id="pauseM3" class="Pause">Pause</button>
+            </div>
+            <button id="restartM3" class="Restart">Restart</button>
+            <h3>
+                Melody 2
+            </h3>
+            <div class="PlayPause">
+                <button id="M4" class="Play">Play</button>
+                <button id="pauseM4" class="Pause">Pause</button>
+            </div>
+            <button id="restartM4" class="Restart">Restart</button>
+            <h3>
+                Melody 3
+            </h3>
+            <div class="PlayPause">
+                <button id="M5" class="Play">Play</button>
+                <button id="pauseM5" class="Pause">Pause</button>
+            </div>
+            <button id="restartM5" class="Restart">Restart</button>
+            <h3>
+                Melody 4
+            </h3>
+            <div class="PlayPause">
+                <button id="M6" class="Play">Play</button>
+                <button id="pauseM6" class="Pause">Pause</button>
+            </div>
+            <button id="restartM6" class="Restart">Restart</button>
+            <h3>
+                Melody 5
+            </h3>
+            <div class="PlayPause">
+                <button id="M7" class="Play">Play</button>
+                <button id="pauseM7" class="Pause">Pause</button>
+            </div>
+            <button id="restartM7" class="Restart">Restart</button>
+            <h3>
+                Melody 6
+            </h3>
+            <div class="PlayPause">
+                <button id="M8" class="Play">Play</button>
+                <button id="pauseM8" class="Pause">Pause</button>
+            </div>
+            <button id="restartM8" class="Restart">Restart</button>
+            <h3>
+                Melody 7
+            </h3>
+            <div class="PlayPause">
+                <button id="M9" class="Play">Play</button>
+                <button id="pauseM9" class="Pause">Pause</button>
+            </div>
+            <button id="restartM9" class="Restart">Restart</button>
+        </div>
+        <div>
+            <h2>
+                Sound Effects
+            </h2>
+            <button id="Clap" class="PlayEffect">Clap</button>
+            <button id="CZ" class="PlayEffect">CZ</button>
+            <button id="Bark" class="PlayEffect">Bark</button>
+            <button id="Wu" class="PlayEffect">Wu!</button>
+            <button id="Scratch1" class="PlayEffect">Scratch 1</button>
+            <button id="Scratch2" class="PlayEffect">Scratch 2</button>
+            <button id="Scratch3" class="PlayEffect">Scratch 3</button>
+            <button id="Scratch4" class="PlayEffect">Scratch 4</button>
+        </div>
+    </div>
+    <script src="popup.js" charset="utf-8">
+        </script>
+    <script src="content.js" charset="utf-8">
+        </script>
+</body>
+</html>
